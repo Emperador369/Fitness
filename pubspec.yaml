@@ -48,23 +48,25 @@ flutter:
   assets:
     - assets/img/pierna2.jpg
     - assets/img/pesas.jpg
+    - assets/img/abdominal.jpg
+    - assets/img/abducion.jpg
     - assets/img/cinta.jpg
     - assets/img/cinta2.jpg
     - assets/img/abdomen2.jpg
     - assets/img/peso.jpg
-    - assets/img/pierna2.jpg
     - assets/img/gluteos.jpg
     - assets/img/gluteos2.jpg
     - assets/img/pierna.jpg
     - assets/img/barra2.jpg
     - assets/img/rusa.jpg
     - assets/img/pierna3.jpg
-    - assets/img/cinta2.jpg
     - assets/img/peso2.jpg
     - assets/img/mancuernas.jpg
     - assets/img/estiramiento.jpg
-    - assets/img/gluteos.jpg
     - assets/img/barra.jpg
-    - assets/img/pierna5.png
-    - assets/img/otro.png
-    - assets/img/otro1.png
+    - assets/img/pierna5.jpg
+    - assets/img/otro.jpg
+    - assets/img/otro1.jpg
+    - assets/img/pesas.jpg
+    - assets/img/pierna.jpg
+    - assets/img/rutinaejercicios.jpg

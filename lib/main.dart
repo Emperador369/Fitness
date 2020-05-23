@@ -30,15 +30,15 @@ class _HomeState extends State<Home> {
     {"nombre": "Pierna..", "imagen": "pierna.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
     {"nombre": "Barra", "imagen": "barra2.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
     {"nombre": "Rusa", "imagen": "rusa.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
-    {"nombre": "Pierna..", "imagen": "pierna3.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
-    {"nombre": "Cinta Elastica", "imagen": "cinta2.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
+    {"nombre": "Pierna cinta", "imagen": "pierna3.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
+    {"nombre": "Cinta Elastica repeticion 4", "imagen": "cinta2.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
     {"nombre": "Peso z", "imagen": "peso2.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
     {"nombre": "Mancuernas", "imagen": "mancuernas.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
     {"nombre": "Estiramiento", "imagen": "estiramiento.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
-    {"nombre": "Otro", "imagen": "otro.png", "deporte": "Fortalece pierna y Gluteos"},
-    {"nombre": "Otro+", "imagen": "otro1.png", "deporte": "pierna y Gluteos"},
-    {"nombre": "mas Ejercicio", "imagen": "pierna5.png", "deporte": "Fortalece pierna y Gluteos"},
-    {"nombre": "barra de 5k", "imagen": "barra.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
+    {"nombre": "fortaleza pierna Gluteo", "imagen": "otro.png", "deporte": "Fortalece pierna y Gluteos"},
+    {"nombre": "Piernas + Gluteos", "imagen": "otro1.png", "deporte": "pierna y Gluteos"},
+    {"nombre": "Mas Ejercicio", "imagen": "pierna5.png", "deporte": "Fortalece pierna y Gluteos"},
+    {"nombre": "Barra de 5k", "imagen": "barra.jpg", "deporte": "Trabajo con cinta 4 repeticiones de 15"},
   ];
 
   _listado() async {
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
           child: new Column(
             children: <Widget>[
               new Hero(
-                tag: arregloxyz['nombre'],
+                tag: arregloxyz["nombre"],
                 child: new Material(
                   child: new InkWell(
                     onTap: () =>
@@ -94,17 +94,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: new AppBar(title: new Text('Fitness 2020'), backgroundColor: Colors.orange,),
+       appBar: new AppBar(title: new Text('Fitness 2020'), backgroundColor: Colors.red[500],),
           drawer: new Drawer(
             child: new ListView(
               children: <Widget>[
                 new UserAccountsDrawerHeader(
-                  accountName: new Text('Ejercicios'),
+                  accountName: new Text('Rutina de Ejercicios'),
                   accountEmail: new Text('yiminsonc@yahoo.com'),
                   decoration: new BoxDecoration(
                     image: new DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage('assets/img/estiramiento.jpg'),
+                      image: AssetImage('assets/img/rutinaejercicios.jpg'),
                     )
                   ),
                 ),
@@ -130,7 +130,7 @@ class _HomeState extends State<Home> {
           body: new GridView.count(
             crossAxisCount: 2, //numero de columas de la primera pagina pruebn con 1
             mainAxisSpacing: 0.1, //espacio entre card
-            childAspectRatio: 0.700, //espacio largo de cada card 
+            childAspectRatio: 0.600, //espacio largo de cada card 
             children: listamos,
           ),
     );
@@ -159,7 +159,7 @@ class Detalle extends StatelessWidget {
                 child: new Material(
                   child: new InkWell(
                     child: new Image.asset(
-                      "img/$imagen",
+                      "assets/img/$imagen",
                       fit: BoxFit.cover,
                     ),
                   ),
