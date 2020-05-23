@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                       ),
                     )),
                     child: new Image.asset(
-                      "img/$imagen",
+                      "assets/img/$imagen",
                       fit: BoxFit.contain
                     ),
                   ),
@@ -81,11 +81,223 @@ class _HomeState extends State<Home> {
       ));
     }
   }
-  
+ @override
+   void initState() { 
+     _listado();
+      super.initState();      
+    }
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+       appBar: new AppBar(title: new Text('Fitness 2020'), backgroundColor: Colors.orange,),
+          drawer: new Drawer(
+            child: new ListView(
+              children: <Widget>[
+                new UserAccountsDrawerHeader(
+                  accountName: new Text('Ejercicios'),
+                  accountEmail: new Text('yiminsonc@yahoo.com'),
+                  decoration: new BoxDecoration(
+                    image: new DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/img/estiramiento.jpg'),
+                    )
+                  ),
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Calculadora IMC"),
+                  trailing: new Icon(Icons.fitness_center),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => Calculadora(),
+                  )),
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Soporte"),
+                  trailing: new Icon(Icons.help),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => Nosotros(),
+                  )),
+                ),
+              ],
+            ),
+          ),
+          body: new GridView.count(
+            crossAxisCount: 2, //numero de columas de la primera pagina pruebn con 1
+            mainAxisSpacing: 0.1, //espacio entre card
+            childAspectRatio: 0.700, //espacio largo de cada card 
+            children: listamos,
+          ),
+    );
+  }
+}
+
+//creamos el metodo detalle
+//este se usa cuando pulsamos para ver segunda pantalla la descripcion del ejercicio
+class Detalle extends StatelessWidget {
+   Detalle({this.nombre, this.imagen, this.deporte});
+  final String nombre;
+  final String imagen;
+  final String deporte;
+
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        resizeToAvoidBottomPadding: false,
+        body: new ListView(
+          children: <Widget>[
+            new Container(
+              height: 387.0,//tamaño de la segunda imagen
+              child: new Hero(
+                tag: nombre,
+                child: new Material(
+                  child: new InkWell(
+                    child: new Image.asset(
+                      "img/$imagen",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              )),
+              new IniciarNombre(
+                nombre: nombre,
+              ),
+              new IniciarIcon(),
+              new Informacion(
+                deporte: deporte,
+              ),
+          ],
+        ),
+      );
+    } 
+
+}
+
+class IniciarNombre extends StatelessWidget {
+  IniciarNombre({this.nombre});
+  final String nombre;
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      padding: new EdgeInsets.all(10.0),
+      child: new Row(
+        children: <Widget>[
+          new Expanded(
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                new Text(
+                  nombre,
+                  style: new TextStyle(fontSize: 20.0, color: Colors.blue),
+                ),
+                new Text(
+                  "$nombre\@gmail.com",
+                  style: new TextStyle(fontSize: 15.0, color: Colors.blueGrey),
+                ),
+              ],
+            ),
+          ),
+          new Row(
+            children: <Widget>[
+              new Icon(//icono que agrega estrellas calificacion
+                Icons.star,
+                size: 30.0,
+                color: Colors.red,
+              ),
+              new Icon(
+                Icons.star,
+                size: 30.0,
+                color: Colors.orange,
+              ),
+              new Icon(
+                Icons.star,
+                size: 30.0,
+                color: Colors.purple,
+              ),
+              new Text(
+                "12",
+                style: new TextStyle(fontSize: 18.0),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class IniciarIcon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: new EdgeInsets.all(10.0),
+      child: new Row(
+        children: <Widget>[
+          new IconTec(
+            icon: Icons.call,
+            tec: "Llamar"
+                ), 
+                new IconTec(
+            icon: Icons.message,
+            tec: "WhastApp"
+                ),
+                new IconTec(
+            icon: Icons.photo,
+            tec: "Foto"
+                ),
+                  ],
+      ),
+    );
+  }
+}
+
+class IconTec extends StatelessWidget {
+  IconTec({this.icon, this.tec});
+  final IconData icon;
+  final String tec;
+  @override
+  Widget build(BuildContext context) {
+    return new Expanded(
+      child: new Column(
+        children: <Widget>[
+          new Icon(
+            icon,
+            size: 50.0,
+            color: Colors.blue,
+          ),
+          new Text(
+            tec,
+            style: new TextStyle(fontSize: 12.0, color: Colors.blue),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Informacion extends StatelessWidget {
+  Informacion({this.deporte});
+  final String deporte;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 500,
+      padding: new EdgeInsets.all(10.0),
+      child: new Card(
+        child: new Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: new Text(
+            deporte,
+            style: new TextStyle(fontSize: 16.0, color: Colors.blue),
+          ),
+        ),
+      ),
     );
   }
 }
