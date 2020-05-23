@@ -46,25 +46,25 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - img/pierna2.jpg
-    - img/pesas.jpg
-    - img/cinta.jpg
-    - img/cinta2.jpg
-    - img/abdomen2.jpg
-    - img/peso.jpg
-    - img/pierna2.jpg
-    - img/gluteos.jpg
-    - img/gluteos2.jpg
-    - img/pierna.jpg
-    - img/barra2.jpg
-    - img/rusa.jpg
-    - img/pierna3.jpg
-    - img/cinta2.jpg
-    - img/peso2.jpg
-    - img/mancuernas.jpg
-    - img/estiramiento.jpg
-    - img/gluteos.jpg
-    - img/barra.jpg
-    - img/pierna5.png
-    - img/otro.png
-    - img/otro1.png
+    - assets/img/pierna2.jpg
+    - assets/img/pesas.jpg
+    - assets/img/cinta.jpg
+    - assets/img/cinta2.jpg
+    - assets/img/abdomen2.jpg
+    - assets/img/peso.jpg
+    - assets/img/pierna2.jpg
+    - assets/img/gluteos.jpg
+    - assets/img/gluteos2.jpg
+    - assets/img/pierna.jpg
+    - assets/img/barra2.jpg
+    - assets/img/rusa.jpg
+    - assets/img/pierna3.jpg
+    - assets/img/cinta2.jpg
+    - assets/img/peso2.jpg
+    - assets/img/mancuernas.jpg
+    - assets/img/estiramiento.jpg
+    - assets/img/gluteos.jpg
+    - assets/img/barra.jpg
+    - assets/img/pierna5.png
+    - assets/img/otro.png
+    - assets/img/otro1.png

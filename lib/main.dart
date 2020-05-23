@@ -1,3 +1,5 @@
+import 'package:app_fitness/pages/calculadora_imc.dart';
+import 'package:app_fitness/pages/nosotros.dart';
 import 'package:flutter/material.dart';
 
 void main() {
